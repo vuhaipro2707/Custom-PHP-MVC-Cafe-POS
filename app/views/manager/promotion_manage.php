@@ -74,7 +74,7 @@
                                             <div class="d-flex gap-1 justify-content-center">
                                                 <?php if (!$isExpired): ?>
                                                 <!-- Toggle trạng thái -->
-                                                <form method="POST" action="/cnpm-final/PromotionController/toggleActive">
+                                                <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PromotionController/toggleActive">
                                                     <input type="hidden" name="promotionId" value="<?= $promo['promotionId'] ?>">
                                                     <input type="hidden" name="active" value="<?= $promo['active'] ? 0 : 1 ?>">
                                                     <button type="submit" class="btn btn-sm <?= $promo['active'] ? 'btn-outline-warning' : 'btn-outline-success' ?>" title="<?= $promo['active'] ? 'Tắt mã' : 'Kích hoạt mã' ?>">
@@ -84,7 +84,7 @@
                                                 <?php endif; ?>
 
                                                 <!-- Xoá -->
-                                                <form method="POST" action="/cnpm-final/PromotionController/delete" onsubmit="return confirm('Xoá mã này?')">
+                                                <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PromotionController/delete" onsubmit="return confirm('Xoá mã này?')">
                                                     <input type="hidden" name="promotionId" value="<?= $promo['promotionId'] ?>">
                                                     <button type="submit" class="btn btn-sm btn-outline-danger">🗑</button>
                                                 </form>
@@ -109,7 +109,7 @@
                     ➕ Tạo mã khuyến mãi mới
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="/cnpm-final/PromotionController/create">
+                    <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PromotionController/create">
                         <div class="mb-3">
                             <label for="discountCode" class="form-label">Mã giảm giá</label>
                             <input type="text" class="form-control" id="discountCode" name="discountCode" maxlength="50" required>

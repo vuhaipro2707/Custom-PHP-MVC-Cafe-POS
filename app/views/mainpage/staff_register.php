@@ -4,7 +4,7 @@
     <h2 class="mb-4 text-center">➕ Tạo tài khoản nhân viên</h2>
 
     <div class="col-md-6 col-lg-5 mx-auto">
-        <form action="/cnpm-final/AuthController/staffRegister" method="POST" enctype="multipart/form-data" class="shadow p-4 bg-body rounded">
+        <form action="/Custom-PHP-MVC-Cafe-POS/AuthController/staffRegister" method="POST" enctype="multipart/form-data" class="shadow p-4 bg-body rounded">
 
             <div class="mb-3">
                 <label for="name" class="form-label">Họ tên nhân viên</label>
@@ -57,7 +57,7 @@
             <?php endif; ?>
 
             <button type="submit" class="btn btn-primary w-100">Tạo tài khoản</button>
-            <a href="/cnpm-final/StaffController/managerStaffManagePage" class="btn btn-secondary w-100 mt-2">Quay lại</a>
+            <a href="/Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage" class="btn btn-secondary w-100 mt-2">Quay lại</a>
         </form>
     </div>
 </div>

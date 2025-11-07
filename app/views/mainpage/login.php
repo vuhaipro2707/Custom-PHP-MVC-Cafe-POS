@@ -15,7 +15,7 @@
             <?php endif; ?>
 
             <!-- Form -->
-            <form method="POST" action="/cnpm-final/AuthController/login">
+            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/AuthController/login">
                 <div class="mb-3">
                     <label class="form-label">Tên đăng nhập</label>
                     <input type="text" name="username" class="form-control" required style="border-radius: 10px;">
@@ -40,7 +40,7 @@
 
                 <div class="d-flex justify-content-between">
                     <button type="submit" class="btn btn-primary" style="border-radius: 10px;">Đăng nhập</button>
-                    <a href="/cnpm-final/HomeController/registerPage" class="btn btn-outline-secondary" style="border-radius: 10px;">Đăng ký</a>
+                    <a href="/Custom-PHP-MVC-Cafe-POS/HomeController/registerPage" class="btn btn-outline-secondary" style="border-radius: 10px;">Đăng ký</a>
                 </div>
             </form>
         </div>

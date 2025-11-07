@@ -16,7 +16,7 @@
                 // Kiểm tra dữ liệu hợp lệ (có thể thêm các bước kiểm tra, ví dụ: kiểm tra định dạng số điện thoại)
                 if (empty($customerId) || empty($name) || empty($phone)) {
                     $_SESSION['error'] = "Vui lòng điền đầy đủ thông tin!";
-                    header('Location: /cnpm-final/CustomerController/staffCustomerManagePage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/CustomerController/staffCustomerManagePage');
                     exit;
                 }
 
@@ -26,7 +26,7 @@
                 $customerModel->updateCustomerPhone($customerId, $phone);
 
                 $_SESSION['success'] = "Cập nhật thông tin khách hàng thành công!";
-                header('Location: /cnpm-final/CustomerController/staffCustomerManagePage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/CustomerController/staffCustomerManagePage');
                 exit;
             }
         }

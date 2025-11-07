@@ -18,7 +18,7 @@
                         $_SESSION['username'] = $account['username'];
                         $_SESSION['role'] = $account['role'];
                         $_SESSION['avatar'] = $account['avatar'];
-                        header('Location: /cnpm-final/HomeController/index');
+                        header('Location: /Custom-PHP-MVC-Cafe-POS/HomeController/index');
                         exit;
                     }
                 }
@@ -33,7 +33,7 @@
 
         public function logout() {
             session_destroy();
-            header('Location: /cnpm-final/auth/login');
+            header('Location: /Custom-PHP-MVC-Cafe-POS/auth/login');
             exit;
         }
 
@@ -120,14 +120,14 @@
                 // Kiểm tra các trường bắt buộc
                 if (empty($name) || empty($position) || empty($username) || empty($password) || empty($salary) || empty($phone)) {
                     $_SESSION['error'] = "Vui lòng điền đầy đủ thông tin!";
-                    header('Location: /cnpm-final/HomeController/staffRegisterPage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/HomeController/staffRegisterPage');
                     exit;
                 }
 
                 // Kiểm tra mật khẩu khớp
                 if ($password !== $confirmPassword) {
                     $_SESSION['error'] = "Mật khẩu và xác nhận mật khẩu không khớp!";
-                    header('Location: /cnpm-final/HomeController/staffRegisterPage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/HomeController/staffRegisterPage');
                     exit;
                 }
 
@@ -135,7 +135,7 @@
                 $accountModel = $this->model('Account');
                 if ($accountModel->getAccountInfoByUsername($username)) {
                     $_SESSION['error'] = "Tên đăng nhập đã tồn tại!";
-                    header('Location: /cnpm-final/HomeController/staffRegisterPage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/HomeController/staffRegisterPage');
                     exit;
                 }
 
@@ -167,7 +167,7 @@
                 unset($_SESSION['remStaRegister']);
 
                 $_SESSION['success'] = "Tạo tài khoản nhân viên thành công!";
-                header('Location: /cnpm-final/StaffController/managerStaffManagePage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage');
                 exit;
             }
         }
@@ -209,7 +209,7 @@
                 }
 
                 // Sau khi xử lý xong, redirect để tránh submit lại form
-                header("Location: /cnpm-final/HomeController/changePasswordPage");
+                header("Location: /Custom-PHP-MVC-Cafe-POS/HomeController/changePasswordPage");
                 exit();
             }
         }
@@ -249,14 +249,14 @@
                 'text' => "Cập nhật thành công {$updatedCount} tài khoản!"
             ];
 
-            header("Location: /cnpm-final/HomeController/index");
+            header("Location: /Custom-PHP-MVC-Cafe-POS/HomeController/index");
             exit;
         } else {
             $_SESSION['message'] = [
                 'type' => 'danger',
                 'text' => 'Dữ liệu gửi lên không hợp lệ!'
             ];
-            header("Location: /cnpm-final/HomeController/index");
+            header("Location: /Custom-PHP-MVC-Cafe-POS/HomeController/index");
             exit;
         }
     } else {
@@ -264,7 +264,7 @@
             'type' => 'danger',
             'text' => 'Phương thức yêu cầu không hợp lệ!'
         ];
-        header("Location: /cnpm-final/HomeController/index");
+        header("Location: /Custom-PHP-MVC-Cafe-POS/HomeController/index");
         exit;
     }
 }

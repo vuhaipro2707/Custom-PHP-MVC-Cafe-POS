@@ -33,7 +33,7 @@
                     'type' => 'success',
                     'text' => 'Đã xóa sản phẩm thành công! Mã sản phẩm:' . $itemId
                 ];
-                header('Location: /cnpm-final/InventoryController/displayAllItem');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem');
                 exit;
             }
         }
@@ -67,7 +67,7 @@
                     ];
                 }
 
-                header("Location: /cnpm-final/InventoryController/displayAllItem");
+                header("Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem");
                 exit;
             }
         }
@@ -101,7 +101,7 @@
                     ];
                 }
 
-                header("Location: /cnpm-final/InventoryController/displayAllItem");
+                header("Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem");
                 exit;
             }
         }
@@ -119,7 +119,7 @@
                         'type' => 'danger',
                         'text' => 'Vui lòng điền đầy đủ và hợp lệ thông tin món ăn.'
                     ];
-                    header('Location: /cnpm-final/InventoryController/displayAllItem');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem');
                     exit;
                 }
 
@@ -128,7 +128,7 @@
                         'type' => 'danger',
                         'text' => 'Ảnh món ăn là bắt buộc.'
                     ];
-                    header('Location: /cnpm-final/InventoryController/displayAllItem');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem');
                     exit;
                 }
 
@@ -154,7 +154,7 @@
                         'type' => 'danger',
                         'text' => 'Tải ảnh lên thất bại.'
                     ];
-                    header('Location: /cnpm-final/InventoryController/displayAllItem');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem');
                     exit;
                 }
 
@@ -165,7 +165,7 @@
                     'type' => 'success',
                     'text' => 'Đã thêm món "' . htmlspecialchars($name) . '" thành công!'
                 ];
-                header('Location: /cnpm-final/InventoryController/displayAllItem');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem');
                 exit;
             }
         }

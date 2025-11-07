@@ -42,7 +42,7 @@
                     !isset($_SESSION['readyOrder']['tableNumber'])
                 ) {
                     // Giỏ hàng rỗng
-                    header('Location: /cnpm-final/InventoryController/customerMenuPage/error');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/customerMenuPage/error');
                     exit;
                 }
 
@@ -66,7 +66,7 @@
                 // Đổi trạng thái bàn
                 $tableModel->updateStatusByPosition($layoutPosition, 'serving');
                 unset($_SESSION['readyOrder']);
-                header("Location: /cnpm-final/InventoryController/customerMenuPage/success/" . $orderId);
+                header("Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/customerMenuPage/success/" . $orderId);
             }
         }
 
@@ -131,7 +131,7 @@
                         $tableModel->updateStatusByPosition($pos, 'empty');
                     }
                 }       
-                header('Location: /cnpm-final/OrderController/orderConfirmPage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/OrderController/orderConfirmPage');
                 exit;
             }
         }

@@ -3,8 +3,8 @@ $role = $_SESSION['role'] ?? 'guest';
 $info = ($role === 'customer') ? $data['customer'] : $data['staff'];
 
 $imgSrc = empty($_SESSION['avatar']) 
-    ? '/cnpm-final/public/images/avatar/default.jpg' 
-    : '/cnpm-final/public/images/avatar/' . $_SESSION['avatar'];
+    ? '/Custom-PHP-MVC-Cafe-POS/public/images/avatar/default.jpg' 
+    : '/Custom-PHP-MVC-Cafe-POS/public/images/avatar/' . $_SESSION['avatar'];
 ?>
 
 <div class="container mt-5">
@@ -29,7 +29,7 @@ $imgSrc = empty($_SESSION['avatar'])
 
             <div class="d-grid gap-2 mt-3">
                 <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal">✏️ Thay đổi thông tin</button>
-                <a href="/cnpm-final/HomeController/index" class="btn btn-secondary">← Trang chủ</a>
+                <a href="/Custom-PHP-MVC-Cafe-POS/HomeController/index" class="btn btn-secondary">← Trang chủ</a>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@ $imgSrc = empty($_SESSION['avatar'])
 <!-- Modal Cập Nhật -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="POST" enctype="multipart/form-data" action="/cnpm-final/ProfileController/update">
+    <form method="POST" enctype="multipart/form-data" action="/Custom-PHP-MVC-Cafe-POS/ProfileController/update">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title">Cập nhật thông tin</h5>

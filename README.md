@@ -50,8 +50,8 @@ The system is structured around distinct user roles:
 1.  **Clone the Project:**
     ```bash
     cd /path/to/xampp/htdocs
-    git clone [Your-GitHub-Repository-Link] cnpm-final 
-    # The default running path expects the directory name 'cnpm-final'.
+    git clone [Your-GitHub-Repository-Link] Custom-PHP-MVC-Cafe-POS 
+    # The default running path expects the directory name 'Custom-PHP-MVC-Cafe-POS'.
     ```
 
 2.  **Initialize Database:**
@@ -63,7 +63,7 @@ The system is structured around distinct user roles:
 3.  **Run the Application:**
     * Access the application in your web browser:
         ```
-        http://localhost/cnpm-final/
+        http://localhost/Custom-PHP-MVC-Cafe-POS/
         ```
 
 ## 🔐 Test Accounts

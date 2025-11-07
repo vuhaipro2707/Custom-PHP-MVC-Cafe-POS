@@ -44,7 +44,7 @@
                                 <td>
                                     <?php
                                     $defaultImage = 'https://picsum.photos/300/300';
-                                    $imageLink = !empty($item['image']) ? ('/cnpm-final/public/images/productCard/' . $item['image']) : $defaultImage;
+                                    $imageLink = !empty($item['image']) ? ('/Custom-PHP-MVC-Cafe-POS/public/images/productCard/' . $item['image']) : $defaultImage;
                                     ?>
                                     <img src="<?= $imageLink ?>" alt="ảnh" width="50" height="35" style="object-fit:cover; border-radius: 5px;">
                                 </td>
@@ -60,7 +60,7 @@
                                 </td>
 
                                 <td>
-                                    <form id="form-subtract-<?= $item['itemId'] ?>" method="POST" action="/cnpm-final/InventoryController/subtractItem" style="display:inline;">
+                                    <form id="form-subtract-<?= $item['itemId'] ?>" method="POST" action="/Custom-PHP-MVC-Cafe-POS/InventoryController/subtractItem" style="display:inline;">
                                         <input type="hidden" name="itemId" value="<?= $item['itemId']; ?>">
                                         <input type="hidden" name="quantity" id="subtract-quantity-<?= $item['itemId'] ?>" value="1">
                                         <button type="submit" class="btn btn-sm btn-outline-secondary" title="Trừ hàng">➖</button>
@@ -68,7 +68,7 @@
                                 </td>
 
                                 <td>
-                                    <form id="form-restock-<?= $item['itemId'] ?>" method="POST" action="/cnpm-final/InventoryController/restockItem" style="display:inline;">
+                                    <form id="form-restock-<?= $item['itemId'] ?>" method="POST" action="/Custom-PHP-MVC-Cafe-POS/InventoryController/restockItem" style="display:inline;">
                                         <input type="hidden" name="itemId" value="<?= $item['itemId']; ?>">
                                         <input type="hidden" name="quantity" id="restock-quantity-<?= $item['itemId'] ?>" value="1">
                                         <button type="submit" class="btn btn-sm btn-outline-success" title="Nhập thêm">➕</button>
@@ -94,7 +94,7 @@
                                 </script>
                                 <td>
                                     <!-- Form xoá mặt hàng -->
-                                    <form method="POST" action="/cnpm-final/InventoryController/deleteItem" onsubmit="return confirm('Bạn có chắc muốn xoá mặt hàng này?')">
+                                    <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/InventoryController/deleteItem" onsubmit="return confirm('Bạn có chắc muốn xoá mặt hàng này?')">
                                         <input type="hidden" name="itemId" value="<?= $item['itemId']; ?>">
                                         <button type="submit" class="btn btn-sm btn-outline-danger">🗑</button>
                                     </form>
@@ -117,7 +117,7 @@
                     ➕ Thêm món mới vào menu
                 </div>
                 <div class="card-body">
-                    <form method="POST" action="/cnpm-final/InventoryController/createItem" enctype="multipart/form-data">
+                    <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/InventoryController/createItem" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="name" class="form-label">Tên món</label>
                             <input type="text" class="form-control" id="name" name="name" required>

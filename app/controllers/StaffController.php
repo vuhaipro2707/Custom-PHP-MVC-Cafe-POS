@@ -2,7 +2,7 @@
     class StaffController extends Controller {
         public function managerStaffManagePage() {
             if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'manager') {
-                header('Location: /cnpm-final/HomeController/index');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/HomeController/index');
                 exit;
             }
 
@@ -27,7 +27,7 @@
                     $accountModel->deleteAccount($staff['username']);
                 }
                 $_SESSION['success'] = "Xóa nhân viên thành công!";
-                header('Location: /cnpm-final/StaffController/managerStaffManagePage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage');
                 exit;
             }
         }
@@ -46,14 +46,14 @@
                 // Kiểm tra dữ liệu hợp lệ (có thể thêm các bước kiểm tra, ví dụ: kiểm tra định dạng số điện thoại)
                 if (empty($staffId) || empty($name) || empty($position) || empty($phone) || empty($salary)) {
                     $_SESSION['error'] = "Vui lòng điền đầy đủ thông tin!";
-                    header('Location: /cnpm-final/StaffController/managerStaffManagePage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage');
                     exit;
                 }
 
                 // Đảm bảo rằng lương là số hợp lệ
                 if (!is_numeric($salary)) {
                     $_SESSION['error'] = "Lương phải là một số hợp lệ!";
-                    header('Location: /cnpm-final/StaffController/managerStaffManagePage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage');
                     exit;
                 }
 
@@ -62,7 +62,7 @@
                 $staffModel->updateStaffInfoByStaffId($staffId, $name, $position, $phone, $salary, $isManager);
 
                 $_SESSION['success'] = "Cập nhật thông tin nhân viên thành công!";
-                header('Location: /cnpm-final/StaffController/managerStaffManagePage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage');
                 exit;
             }
         }

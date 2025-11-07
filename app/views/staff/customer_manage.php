@@ -27,8 +27,8 @@
         <?php foreach ($data['customer'] as $customer): ?>
             <?php
                 $imgSrc = empty($customer['avatar']) 
-                    ? '/cnpm-final/public/images/avatar/default.jpg' 
-                    : '/cnpm-final/public/images/avatar/' . $customer['avatar'];
+                    ? '/Custom-PHP-MVC-Cafe-POS/public/images/avatar/default.jpg' 
+                    : '/Custom-PHP-MVC-Cafe-POS/public/images/avatar/' . $customer['avatar'];
             ?>
             <div class="list-group-item list-group-item-action d-flex align-items-center justify-content-between shadow-sm p-3 mb-2 bg-body rounded customer-item">
                 <div class="d-flex align-items-center">
@@ -58,7 +58,7 @@
 
 <div class="modal fade" id="editCustomerModal" tabindex="-1" aria-labelledby="editCustomerModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="POST" action="/cnpm-final/CustomerController/updateCustomer">
+    <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/CustomerController/updateCustomer">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">📝 Chỉnh sửa thông tin khách hàng</h5>

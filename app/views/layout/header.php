@@ -26,7 +26,7 @@ ob_start(); // Bắt đầu output buffering
 
 <div class="container-fluid mt-3 mb-3">
   <nav class="navbar navbar-expand-lg bg-light text-dark px-4 py-2 shadow rounded-3">
-    <a class="navbar-brand" href="/cnpm-final/HomeController/index">☕ Coffee Shop</a>
+    <a class="navbar-brand" href="/Custom-PHP-MVC-Cafe-POS/HomeController/index">☕ Coffee Shop</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
       <span class="navbar-toggler-icon"></span>
@@ -49,10 +49,10 @@ ob_start(); // Bắt đầu output buffering
                 <a class="dropdown-item dropdown-toggle" href="#">📦 Đơn hàng</a>
                 <ul class="dropdown-menu">
                   <?php if ($role === 'staff' || $role === 'manager'): ?>
-                    <li><a class="dropdown-item" href="/cnpm-final/OrderController/orderConfirmPage">Xác nhận đơn</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/OrderController/orderConfirmPage">Xác nhận đơn</a></li>
                   <?php endif; ?>
                   <?php if ($role === 'customer'): ?>
-                    <li><a class="dropdown-item" href="/cnpm-final/OrderController/customerTrackOrderPage">Theo dõi đơn hàng</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/OrderController/customerTrackOrderPage">Theo dõi đơn hàng</a></li>
                   <?php endif; ?>
                 </ul>
               </li>
@@ -62,13 +62,13 @@ ob_start(); // Bắt đầu output buffering
                 <a class="dropdown-item dropdown-toggle" href="#">🍽️ Menu / Bàn</a>
                 <ul class="dropdown-menu">
                   <?php if ($role === 'customer'): ?>
-                    <li><a class="dropdown-item" href="/cnpm-final/InventoryController/customerMenuPage">Xem menu</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/InventoryController/customerMenuPage">Xem menu</a></li>
                   <?php endif; ?>
                   <?php if ($role === 'staff' || $role === 'manager'): ?>
-                    <li><a class="dropdown-item" href="/cnpm-final/TableController/manageTableLayout">Quản lý bàn</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/TableController/manageTableLayout">Quản lý bàn</a></li>
                   <?php endif; ?>
                   <?php if ($role === 'manager'): ?>
-                    <li><a class="dropdown-item" href="/cnpm-final/InventoryController/displayAllItem">Quản lý menu</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem">Quản lý menu</a></li>
                   <?php endif; ?>
                 </ul>
               </li>
@@ -78,7 +78,7 @@ ob_start(); // Bắt đầu output buffering
                 <li class="dropdown-submenu">
                   <a class="dropdown-item dropdown-toggle" href="#">👥 Khách hàng</a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/cnpm-final/CustomerController/staffCustomerManagePage">Quản lý khách hàng</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/CustomerController/staffCustomerManagePage">Quản lý khách hàng</a></li>
                   </ul>
                 </li>
               <?php endif; ?>
@@ -88,8 +88,8 @@ ob_start(); // Bắt đầu output buffering
                 <li class="dropdown-submenu">
                   <a class="dropdown-item dropdown-toggle" href="#">🧑‍💼 Quản lý khác</a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/cnpm-final/StaffController/managerStaffManagePage">Nhân viên</a></li>
-                    <li><a class="dropdown-item" href="/cnpm-final/PromotionController/managePromotionPage">Khuyến mãi</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage">Nhân viên</a></li>
+                    <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage">Khuyến mãi</a></li>
                   </ul>
                 </li>
               <?php endif; ?>
@@ -104,20 +104,20 @@ ob_start(); // Bắt đầu output buffering
         <span class="text-muted"><?= htmlspecialchars($_SESSION['username'] ?? 'Guest') ?></span>
 
         <?php if ($role === 'guest'): ?>
-          <a href="/cnpm-final/HomeController/loginPage" class="btn btn-outline-primary">Đăng nhập</a>
+          <a href="/Custom-PHP-MVC-Cafe-POS/HomeController/loginPage" class="btn btn-outline-primary">Đăng nhập</a>
         <?php else: ?>
           <?php
             $avatar = $_SESSION['avatar'] ?? 'default.jpg';
-            $imgSrc = "/cnpm-final/public/images/avatar/" . $avatar;
+            $imgSrc = "/Custom-PHP-MVC-Cafe-POS/public/images/avatar/" . $avatar;
           ?>
           <div class="dropdown">
             <button class="btn dropdown-toggle p-0 border-0 bg-transparent" type="button" data-bs-toggle="dropdown">
               <img src="<?= $imgSrc ?>" class="rounded-circle" width="40" height="40" alt="avatar">
             </button>
             <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="/cnpm-final/ProfileController/index">Hồ sơ</a></li>
-              <li><a class="dropdown-item" href="/cnpm-final/HomeController/changePasswordPage">Đổi mật khẩu</a></li>
-              <li><a class="dropdown-item" href="/cnpm-final/AuthController/logout">Đăng xuất</a></li>
+              <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/ProfileController/index">Hồ sơ</a></li>
+              <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/HomeController/changePasswordPage">Đổi mật khẩu</a></li>
+              <li><a class="dropdown-item" href="/Custom-PHP-MVC-Cafe-POS/AuthController/logout">Đăng xuất</a></li>
             </ul>
           </div>
         <?php endif; ?>

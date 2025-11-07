@@ -24,7 +24,7 @@ foreach ($data['table'] as $table) {
             <div class="position-sticky pt-4" style="top: 2rem;">
                 <div class="card shadow-sm mb-4">
                     <div class="card-body text-center">
-                        <a href="/cnpm-final/OrderController/customerTrackOrderPage" class="btn btn-outline-dark w-100 mb-2">
+                        <a href="/Custom-PHP-MVC-Cafe-POS/OrderController/customerTrackOrderPage" class="btn btn-outline-dark w-100 mb-2">
                             🧾 Xem tất cả order
                         </a>
                         <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#tableModal">
@@ -71,13 +71,13 @@ foreach ($data['table'] as $table) {
                             <div class="card h-100">
                                 <?php
                                 $defaultImage = 'https://picsum.photos/300/300';
-                                $imageLink = !empty($item['image']) ? ('/cnpm-final/public/images/productCard/' . $item['image']) : $defaultImage;
+                                $imageLink = !empty($item['image']) ? ('/Custom-PHP-MVC-Cafe-POS/public/images/productCard/' . $item['image']) : $defaultImage;
                                 ?>
                                 <img src="<?= $imageLink ?>" class="card-img-top mx-auto d-block" style="height: 200px; object-fit: cover;">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title"><?php echo $item['name']; ?></h5>
                                     <p class="card-text"><?php echo $item['note']; ?></p>
-                                    <form method="POST" action="/cnpm-final/CartController/addToCart" class="mt-auto add-to-cart-form">
+                                    <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/CartController/addToCart" class="mt-auto add-to-cart-form">
                                         <input type="hidden" name="itemId" value="<?php echo $item['itemId']; ?>">
                                         <input type="hidden" name="name" value="<?php echo $item['name']; ?>">
                                         <input type="hidden" name="price" value="<?php echo $item['price']; ?>">
@@ -130,14 +130,14 @@ foreach ($data['table'] as $table) {
                     }
                     if ($status === 'serving') {
                       echo '<div class="col d-grid">
-                              <form method="POST" action="/cnpm-final/CartController/setTable" class="d-grid" onsubmit="return confirmServingTable(\'' . $tableNumber . '\')">
+                              <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/CartController/setTable" class="d-grid" onsubmit="return confirmServingTable(\'' . $tableNumber . '\')">
                                 <input type="hidden" name="tableNumber" value="' . $tableNumber . '">
                                 <button type="submit" class="btn btn-danger w-100 py-4">' . $tableNumber . '</button>
                               </form>
                             </div>';
                     } elseif ($status === 'empty') {
                       echo '<div class="col d-grid">
-                              <form method="POST" action="/cnpm-final/CartController/setTable" class="d-grid">
+                              <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/CartController/setTable" class="d-grid">
                                 <input type="hidden" name="tableNumber" value="' . $tableNumber . '">
                                 <button type="submit" class="btn btn-info w-100 py-4">' . $tableNumber . '</button>
                               </form>
@@ -206,7 +206,7 @@ foreach ($data['table'] as $table) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        <form method="POST" action="/cnpm-final/OrderController/createOrder">
+        <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/OrderController/createOrder">
             <button type="submit" class="btn btn-primary">Xác nhận</button>
         </form>
       </div>
@@ -270,7 +270,7 @@ foreach ($data['table'] as $table) {
         document.querySelectorAll('.delete-item').forEach(button => {
             button.onclick = () => {
                 const index = button.getAttribute('data-index');
-                fetch('/cnpm-final/CartController/removeItem', {
+                fetch('/Custom-PHP-MVC-Cafe-POS/CartController/removeItem', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -291,7 +291,7 @@ foreach ($data['table'] as $table) {
             input.onchange = () => {
                 const index = input.getAttribute('data-index');
                 const quantity = input.value;
-                fetch('/cnpm-final/CartController/updateQuantity', {  // Đường dẫn thay đổi số lượng
+                fetch('/Custom-PHP-MVC-Cafe-POS/CartController/updateQuantity', {  // Đường dẫn thay đổi số lượng
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

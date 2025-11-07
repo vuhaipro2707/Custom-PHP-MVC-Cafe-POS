@@ -8,13 +8,13 @@ $role = $_SESSION['role'] ?? 'guest';
 <div id="mainCarousel" class="carousel slide mb-4 mt-3" data-bs-ride="carousel">
   <div class="carousel-inner rounded-4 shadow">
     <div class="carousel-item active">
-      <img src="/cnpm-final/public/images/carousel/banner1.jpg" class="d-block w-100" alt="Cửa hàng 1">
+      <img src="/Custom-PHP-MVC-Cafe-POS/public/images/carousel/banner1.jpg" class="d-block w-100" alt="Cửa hàng 1">
     </div>
     <div class="carousel-item">
-      <img src="/cnpm-final/public/images/carousel/banner2.jpg" class="d-block w-100" alt="Cửa hàng 2">
+      <img src="/Custom-PHP-MVC-Cafe-POS/public/images/carousel/banner2.jpg" class="d-block w-100" alt="Cửa hàng 2">
     </div>
     <div class="carousel-item">
-      <img src="/cnpm-final/public/images/carousel/banner3.webp" class="d-block w-100" alt="Cửa hàng 3">
+      <img src="/Custom-PHP-MVC-Cafe-POS/public/images/carousel/banner3.webp" class="d-block w-100" alt="Cửa hàng 3">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
@@ -28,9 +28,9 @@ $role = $_SESSION['role'] ?? 'guest';
 
 <?php
 if ($role == 'guest') {
-    $link = '/cnpm-final/HomeController/loginPage';
+    $link = '/Custom-PHP-MVC-Cafe-POS/HomeController/loginPage';
 } else if ($role == 'customer') {
-    $link = '/cnpm-final/InventoryController/customerMenuPage';
+    $link = '/Custom-PHP-MVC-Cafe-POS/InventoryController/customerMenuPage';
 }
 ?>
 <!-- Nút đặt món -->
@@ -53,7 +53,7 @@ if ($role == 'guest') {
             <div class="d-flex justify-content-center gap-4">
             <?php foreach ($chunk as $item):
                 $defaultImage = 'https://picsum.photos/300/300';
-                $imageLink = !empty($item['image']) ? ('/cnpm-final/public/images/productCard/' . $item['image']) : $defaultImage;
+                $imageLink = !empty($item['image']) ? ('/Custom-PHP-MVC-Cafe-POS/public/images/productCard/' . $item['image']) : $defaultImage;
             ?>
                 <div class="card" style="width: 220px; height: 350px;">
                 <img src="<?= $imageLink ?>" class="card-img-top" alt="<?= htmlspecialchars($item['name']) ?>" style="height: 200px; object-fit: cover;">
@@ -186,8 +186,8 @@ $data['totalOrders'] =
             <?php if ($role === 'staff' || $role === 'manager'): ?>
               <div class="col-6">
                 <div class="card h-100 text-center">
-                  <a href="/cnpm-final/OrderController/orderConfirmPage" class="text-decoration-none text-dark">
-                    <img src="/cnpm-final/public/images/icons/confirm_order_button.webp" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Xác nhận đơn">
+                  <a href="/Custom-PHP-MVC-Cafe-POS/OrderController/orderConfirmPage" class="text-decoration-none text-dark">
+                    <img src="/Custom-PHP-MVC-Cafe-POS/public/images/icons/confirm_order_button.webp" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Xác nhận đơn">
                     <div class="card-body p-2">
                       <p class="card-text">Xác nhận đơn</p>
                     </div>
@@ -209,8 +209,8 @@ $data['totalOrders'] =
             <?php if ($role === 'staff' || $role === 'manager'): ?>
               <div class="col-6">
                 <div class="card h-100 text-center">
-                  <a href="/cnpm-final/TableController/manageTableLayout" class="text-decoration-none text-dark">
-                    <img src="/cnpm-final/public/images/icons/table.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Quản lý bàn">
+                  <a href="/Custom-PHP-MVC-Cafe-POS/TableController/manageTableLayout" class="text-decoration-none text-dark">
+                    <img src="/Custom-PHP-MVC-Cafe-POS/public/images/icons/table.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Quản lý bàn">
                     <div class="card-body p-2">
                       <p class="card-text">Quản lý bàn</p>
                     </div>
@@ -221,8 +221,8 @@ $data['totalOrders'] =
             <?php if ($role === 'manager'): ?>
               <div class="col-6">
                 <div class="card h-100 text-center">
-                  <a href="/cnpm-final/InventoryController/displayAllItem" class="text-decoration-none text-dark">
-                    <img src="/cnpm-final/public/images/icons/manage_menu.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Quản lý menu">
+                  <a href="/Custom-PHP-MVC-Cafe-POS/InventoryController/displayAllItem" class="text-decoration-none text-dark">
+                    <img src="/Custom-PHP-MVC-Cafe-POS/public/images/icons/manage_menu.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Quản lý menu">
                     <div class="card-body p-2">
                       <p class="card-text">Quản lý menu</p>
                     </div>
@@ -244,8 +244,8 @@ $data['totalOrders'] =
             <div class="row g-3">
               <div class="col-6">
                 <div class="card h-100 text-center">
-                  <a href="/cnpm-final/CustomerController/staffCustomerManagePage" class="text-decoration-none text-dark">
-                    <img src="/cnpm-final/public/images/icons/customer_manage.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Quản lý khách hàng">
+                  <a href="/Custom-PHP-MVC-Cafe-POS/CustomerController/staffCustomerManagePage" class="text-decoration-none text-dark">
+                    <img src="/Custom-PHP-MVC-Cafe-POS/public/images/icons/customer_manage.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Quản lý khách hàng">
                     <div class="card-body p-2">
                       <p class="card-text">Quản lý khách hàng</p>
                     </div>
@@ -267,8 +267,8 @@ $data['totalOrders'] =
             <div class="row g-3">
               <div class="col-6">
                 <div class="card h-100 text-center">
-                  <a href="/cnpm-final/StaffController/managerStaffManagePage" class="text-decoration-none text-dark">
-                    <img src="/cnpm-final/public/images/icons/staff_manage.avif" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Nhân viên">
+                  <a href="/Custom-PHP-MVC-Cafe-POS/StaffController/managerStaffManagePage" class="text-decoration-none text-dark">
+                    <img src="/Custom-PHP-MVC-Cafe-POS/public/images/icons/staff_manage.avif" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Nhân viên">
                     <div class="card-body p-2">
                       <p class="card-text">Quản lý nhân viên</p>
                     </div>
@@ -277,8 +277,8 @@ $data['totalOrders'] =
               </div>
               <div class="col-6">
                 <div class="card h-100 text-center">
-                  <a href="/cnpm-final/PromotionController/managePromotionPage" class="text-decoration-none text-dark">
-                    <img src="/cnpm-final/public/images/icons/promotion_manage.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Khuyến mãi">
+                  <a href="/Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage" class="text-decoration-none text-dark">
+                    <img src="/Custom-PHP-MVC-Cafe-POS/public/images/icons/promotion_manage.jpg" class="card-img-top mx-auto" style="width: auto; height: 100px" alt="Khuyến mãi">
                     <div class="card-body p-2">
                       <p class="card-text">Quản lý khuyến mãi</p>
                     </div>
@@ -318,7 +318,7 @@ $data['feedback'] = [
         <?php unset($_SESSION['message']); ?>
     <?php endif; ?>
 
-      <form method="post" action="/cnpm-final/AuthController/processRoles" class="p-4 bg-white rounded shadow-sm">
+      <form method="post" action="/Custom-PHP-MVC-Cafe-POS/AuthController/processRoles" class="p-4 bg-white rounded shadow-sm">
         <table class="table table-bordered rounded">
           <thead class="table-light">
             <tr>

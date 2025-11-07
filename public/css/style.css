@@ -5,7 +5,7 @@
 body {
 /* background-color:rgb(227,208,193); Màu nền (có thể đổi thành màu bạn muốn) */
 /* Hoặc nếu muốn dùng hình nền thì dùng: */
-background-image: url('/cnpm-final/public/images/other/background.png');
+background-image: url('/Custom-PHP-MVC-Cafe-POS/public/images/other/background.png');
 background-size: auto;
 background-repeat: repeat;
 background-position: 0 0;

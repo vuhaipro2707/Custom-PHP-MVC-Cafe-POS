@@ -33,7 +33,7 @@ class CartController extends Controller {
                 ];
             }
 
-            header('Location: /cnpm-final/InventoryController/customerMenuPage');
+            header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/customerMenuPage');
         }
     }
 
@@ -83,7 +83,7 @@ class CartController extends Controller {
     public function setTable() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['tableNumber'])) {
             $_SESSION['readyOrder']['tableNumber'] = $_POST['tableNumber'];
-            header('Location: /cnpm-final/InventoryController/customerMenuPage');
+            header('Location: /Custom-PHP-MVC-Cafe-POS/InventoryController/customerMenuPage');
             exit;
         }
     }

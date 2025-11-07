@@ -17,7 +17,7 @@
             <?php endif; ?>
 
             <!-- Form -->
-            <form method="POST" action="/cnpm-final/AuthController/customerRegister" enctype="multipart/form-data">
+            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/AuthController/customerRegister" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label">Tên khách hàng</label>
                     <input type="text" name="name" class="form-control" required
@@ -56,7 +56,7 @@
 
             <!-- Link to login page -->
             <div class="text-center mt-3">
-                <a href="/cnpm-final/AuthController/login" class="btn btn-link text-decoration-none text-primary fw-bold" style="font-size: 1.1rem;">
+                <a href="/Custom-PHP-MVC-Cafe-POS/AuthController/login" class="btn btn-link text-decoration-none text-primary fw-bold" style="font-size: 1.1rem;">
                     Đã có tài khoản? Đăng nhập
                 </a>
             </div>

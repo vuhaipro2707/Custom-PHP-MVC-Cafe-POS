@@ -43,14 +43,14 @@
                     <div class="mb-3">
                         <label class="form-label">Mã khuyến mãi:</label>
                         <div class="d-flex align-items-center gap-2">
-                            <form method="POST" action="/cnpm-final/PaymentController/applyPromotion" class="d-flex w-100 gap-2">
+                            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/applyPromotion" class="d-flex w-100 gap-2">
                                 <input type="hidden" name="orderId" value="<?= $data['order']['orderId'] ?>">
                                 <input type="text" name="discountCode" class="form-control" placeholder="Nhập mã" value="<?= $promotion['discountCode'] ?? '' ?>" style="max-width: 250px;">
                                 <button type="submit" class="btn btn-success">Áp dụng</button>
                             </form>
 
                             <?php if (!empty($promotion['discountCode'])): ?>
-                                <form method="POST" action="/cnpm-final/PaymentController/removePromotion">
+                                <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/removePromotion">
                                     <input type="hidden" name="orderId" value="<?= $data['order']['orderId'] ?>">
                                     <button type="submit" class="btn btn-outline-danger">Xóa</button>
                                 </form>
@@ -139,7 +139,7 @@
     <div class="modal-content">
 
       <!-- Form áp dụng điểm -->
-      <form method="POST" action="/cnpm-final/PaymentController/applyPoints">
+      <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/applyPoints">
         <input type="hidden" name="orderId" value="<?= $data['order']['orderId'] ?>">
         <input type="hidden" name="customerPoints" value="<?= $customer['points'] ?>">
         <input type="hidden" name="totalAfterDiscount" value="<?= $totalAfterDiscount ?>">
@@ -161,7 +161,7 @@
       </form>
 
       <!-- Form không sử dụng điểm -->
-      <form method="POST" action="/cnpm-final/PaymentController/removeApplyPoints">
+      <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/removeApplyPoints">
         <input type="hidden" name="orderId" value="<?= $data['order']['orderId'] ?>">
         <div class="modal-footer justify-content-center">
           <button type="submit" class="btn btn-outline-secondary">Không sử dụng điểm</button>
@@ -177,7 +177,7 @@
 <div class="modal fade" id="cashPaymentModal" tabindex="-1" aria-labelledby="cashPaymentModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form method="POST" action="/cnpm-final/PaymentController/confirmPayment">
+            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/confirmPayment">
                 <div class="modal-header">
                     <h5 class="modal-title" id="cashPaymentModalLabel">Thanh toán tiền mặt</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -205,7 +205,7 @@
 <div class="modal fade" id="bankTransferModal" tabindex="-1" aria-labelledby="bankTransferModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form method="POST" action="/cnpm-final/PaymentController/confirmPayment">
+            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/confirmPayment">
                 <div class="modal-header">
                     <h5 class="modal-title" id="bankTransferModalLabel">Thanh toán chuyển khoản</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -233,7 +233,7 @@
 <div class="modal fade" id="momoPaymentModal" tabindex="-1" aria-labelledby="momoPaymentModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form method="POST" action="/cnpm-final/PaymentController/confirmPayment">
+            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/confirmPayment">
                 <div class="modal-header">
                     <h5 class="modal-title" id="momoPaymentModalLabel">Thanh toán qua Momo</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -261,7 +261,7 @@
 <div class="modal fade" id="qrPaymentModal" tabindex="-1" aria-labelledby="qrPaymentModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <form method="POST" action="/cnpm-final/PaymentController/confirmPayment">
+            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/PaymentController/confirmPayment">
                 <div class="modal-header">
                     <h5 class="modal-title" id="qrPaymentModalLabel">Thanh toán qua QR</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

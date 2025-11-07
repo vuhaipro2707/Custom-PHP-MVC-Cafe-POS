@@ -9,7 +9,7 @@
         <?php unset($_SESSION['message']); ?>
     <?php endif; ?>
 
-    <form method="post" action="/cnpm-final/AuthController/changePassword">
+    <form method="post" action="/Custom-PHP-MVC-Cafe-POS/AuthController/changePassword">
         <div class="mb-3">
             <label for="old_password" class="form-label">Mật khẩu cũ</label>
             <input type="password" class="form-control" id="old_password" name="old_password" required>

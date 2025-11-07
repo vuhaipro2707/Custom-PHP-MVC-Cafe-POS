@@ -64,7 +64,7 @@
                 }
             }
 
-            header("Location: /cnpm-final/TableController/manageTableLayout");
+            header("Location: /Custom-PHP-MVC-Cafe-POS/TableController/manageTableLayout");
             exit;
         }
 

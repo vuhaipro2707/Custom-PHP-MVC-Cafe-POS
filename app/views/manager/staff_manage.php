@@ -2,7 +2,7 @@
 <div class="container mt-5">
     <h2 class="mb-4">👥 Danh sách nhân viên</h2>
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <a href="/cnpm-final/HomeController/staffRegisterPage" class="btn btn-primary">
+        <a href="/Custom-PHP-MVC-Cafe-POS/HomeController/staffRegisterPage" class="btn btn-primary">
             + Tạo tài khoản nhân viên
         </a>
 
@@ -33,8 +33,8 @@
         <?php foreach ($data['staffList'] as $staff): ?>
             <?php
                 $imgSrc = empty($staff['avatar']) 
-                    ? '/cnpm-final/public/images/avatar/default.jpg' 
-                    : '/cnpm-final/public/images/avatar/' . $staff['avatar'];
+                    ? '/Custom-PHP-MVC-Cafe-POS/public/images/avatar/default.jpg' 
+                    : '/Custom-PHP-MVC-Cafe-POS/public/images/avatar/' . $staff['avatar'];
             ?>
             <div class="list-group-item list-group-item-action d-flex align-items-center justify-content-between shadow-sm p-3 mb-2 bg-body rounded staff-item">
                 <div class="d-flex align-items-center">
@@ -61,7 +61,7 @@
                             data-phone="<?= $staff['phone'] ?>"
                         >Chỉnh sửa</button>
 
-                        <form method="POST" action="/cnpm-final/StaffController/deleteStaff" class="d-inline" onsubmit="return confirm('Bạn có chắc chắn muốn xóa nhân viên này?')">
+                        <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/StaffController/deleteStaff" class="d-inline" onsubmit="return confirm('Bạn có chắc chắn muốn xóa nhân viên này?')">
                             <input type="hidden" name="staffId" value="<?= $staff['staffId'] ?>">
                             <button type="submit" class="btn btn-sm btn-danger">Xoá</button>
                         </form>
@@ -78,7 +78,7 @@
 <!-- MODAL CHỈNH SỬA -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <form method="POST" action="/cnpm-final/StaffController/updateStaff">
+    <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/StaffController/updateStaff">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">📝 Chỉnh sửa thông tin nhân viên</h5>

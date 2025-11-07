@@ -70,14 +70,14 @@
                     
                     <?php if ($order['status'] == 'pending'): ?>
                         <div class="card-footer d-flex justify-content-between align-items-center">
-                            <form method="POST" action="/cnpm-final/OrderController/confirmOrder" class="m-0 p-0">
+                            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/OrderController/confirmOrder" class="m-0 p-0">
                                 <input type="hidden" name="username" value="<?= $_SESSION['username'] ?>">
                                 <input type="hidden" name="orderId" value="<?= $order['orderId'] ?>">
                                 <input type="hidden" name="status" value="success">
                                 <button type="submit" class="btn btn-success btn-sm">Hoàn tất</button>
                             </form>
 
-                            <form method="POST" action="/cnpm-final/OrderController/confirmOrder" class="m-0 p-0">
+                            <form method="POST" action="/Custom-PHP-MVC-Cafe-POS/OrderController/confirmOrder" class="m-0 p-0">
                                 <input type="hidden" name="username" value="<?= $_SESSION['username'] ?>">
                                 <input type="hidden" name="orderId" value="<?= $order['orderId'] ?>">
                                 <input type="hidden" name="status" value="failed">

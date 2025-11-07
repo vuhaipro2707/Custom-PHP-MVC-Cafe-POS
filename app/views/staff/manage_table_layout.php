@@ -9,7 +9,7 @@ foreach ($data['table'] as $table) {
     <div>
         <h3 class="mb-3">🧭 Quản lý sơ đồ bàn</h3>
 
-        <form id="layoutForm" method="POST" action="/cnpm-final/TableController/updateLayout">
+        <form id="layoutForm" method="POST" action="/Custom-PHP-MVC-Cafe-POS/TableController/updateLayout">
             <input type="hidden" name="layoutData" id="layoutData">
             <button type="button" class="btn btn-warning mb-3" id="toggleEdit">🔧 Chế độ chỉnh sửa</button>
             <button type="submit" class="btn btn-success mb-3" id="saveBtn" style="display: none;">💾 Cập nhật Layout</button>
@@ -153,7 +153,7 @@ foreach ($data['table'] as $table) {
 
                 const form = document.createElement("form");
                 form.method = "POST";
-                form.action = "/cnpm-final/OrderController/tableTrackOrder"; // <-- endpoint xử lý
+                form.action = "/Custom-PHP-MVC-Cafe-POS/OrderController/tableTrackOrder"; // <-- endpoint xử lý
 
                 // Gửi layoutPosition
                 const posInput = document.createElement("input");

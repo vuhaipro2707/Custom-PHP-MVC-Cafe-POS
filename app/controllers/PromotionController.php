@@ -12,7 +12,7 @@
 
                 if (!$id) {
                     $_SESSION['message'] = ['type' => 'danger', 'text' => 'Thiếu mã khuyến mãi.'];
-                    header('Location: /cnpm-final/PromotionController/managePromotionPage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage');
                     exit;
                 }
 
@@ -21,7 +21,7 @@
 
                 if (!$promotion) {
                     $_SESSION['message'] = ['type' => 'danger', 'text' => 'Không tìm thấy khuyến mãi.'];
-                    header('Location: /cnpm-final/PromotionController/managePromotionPage');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage');
                     exit;
                 }
 
@@ -33,7 +33,7 @@
                     'text' => $newStatus ? 'Đã kích hoạt khuyến mãi ' . $promotion['discountCode'] : 'Đã tạm ngừng khuyến mãi ' . $promotion['discountCode']
                 ];
 
-                header('Location: /cnpm-final/PromotionController/managePromotionPage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage');
                 exit;
             }
         }
@@ -44,7 +44,7 @@
 
                 if (!$id) {
                     $_SESSION['message'] = ['type' => 'danger', 'text' => 'Thiếu mã khuyến mãi để xoá.'];
-                    header('Location: /cnpm-final/PromotionController/index');
+                    header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/index');
                     exit;
                 }
 
@@ -57,7 +57,7 @@
                     $_SESSION['message'] = ['type' => 'danger', 'text' => 'Không thể xoá khuyến mãi.'];
                 }
 
-                header('Location: /cnpm-final/PromotionController/managePromotionPage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage');
                 exit;
             }
         }
@@ -84,7 +84,7 @@
                     'text' => "Mã " . $discountCode . " đã tồn tại rồi, hãy xoá mã và thử lại."
                 ];
 
-                header('Location: /cnpm-final/PromotionController/managePromotionPage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage');
                 exit;
             }
             
@@ -94,14 +94,14 @@
                     'text' => 'Ngày bắt đầu không được sau ngày kết thúc.'
                 ];
 
-                header('Location: /cnpm-final/PromotionController/managePromotionPage');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage');
                 exit;
             }
 
             $promotionModel->createPromotion($discountCode, $discountRate, $startDateStr, $endDateStr, $active);
 
             $_SESSION['message'] = ['type' => 'success', 'text' => 'Đã thêm Khuyến mãi thành công! Mã khuyến mãi: ' . $discountCode];
-            header('Location: /cnpm-final/PromotionController/managePromotionPage');
+            header('Location: /Custom-PHP-MVC-Cafe-POS/PromotionController/managePromotionPage');
             exit;
         }
 

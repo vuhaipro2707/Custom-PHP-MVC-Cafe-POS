@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/cnpm-final/public/css/style.css">
+    <link rel="stylesheet" href="/Custom-PHP-MVC-Cafe-POS/public/css/style.css">
 </head>
 <body>
     <?php 

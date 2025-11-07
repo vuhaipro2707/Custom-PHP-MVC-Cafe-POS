@@ -75,7 +75,7 @@
                     $_SESSION['avatar'] = $avatar;
                 }
 
-                header('Location: /cnpm-final/ProfileController/index');
+                header('Location: /Custom-PHP-MVC-Cafe-POS/ProfileController/index');
                 exit;
             }
         }

@@ -47,7 +47,7 @@
 
                 if (!$orderId || !$discountCode) {
                     $_SESSION['payment']['promoError'] = 'Thiếu thông tin đơn hàng hoặc mã khuyến mãi.';
-                    header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                     exit;
                 }
 
@@ -65,7 +65,7 @@
                 }
 
                 // Quay lại trang thanh toán
-                header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                 exit;
             }
         }
@@ -76,14 +76,14 @@
 
                 if (!$orderId) {
                     $_SESSION['payment']['promoError'] = 'Thiếu thông tin đơn hàng.';
-                    header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/");
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/");
                     exit;
                 }
 
                 $paymentModel = $this->model('Payment');
                 $paymentModel->setPromotion($orderId, null);
 
-                header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                 exit;
             }
         }
@@ -98,13 +98,13 @@
 
                 if ($customerPoints < $points) {
                     $_SESSION['payment']['promoError'] = 'Bạn không đủ điểm tích lũy, hãy thử lại.';
-                    header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                     exit;
                 }
             
                 if ($totalAfterDiscount < $points * 1000) {
                     $_SESSION['payment']['promoError'] = 'Số điểm tích lũy sử dụng đã vượt quá số tiền, hãy thử lại.';
-                    header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                     exit;
                 }
 
@@ -112,7 +112,7 @@
                 $paymentModel->setPointsApplied($orderId, $points);
 
                 // Quay lại trang thanh toán
-                header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                 exit;
             }
         }
@@ -123,14 +123,14 @@
 
                 if (!$orderId) {
                     $_SESSION['payment']['promoError'] = 'Thiếu thông tin đơn hàng.';
-                    header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/");
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/");
                     exit;
                 }
 
                 $paymentModel = $this->model('Payment');
                 $paymentModel->setPointsApplied($orderId, null);
 
-                header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                 exit;
             }
         }
@@ -162,14 +162,14 @@
                 if ($paymentStatus == 'completed') {
                     $_SESSION['message'] = ['type' => 'danger', 'text' => "Đơn hàng số " . $orderId . " đã được thanh toán."];
                     $paymentModel->setPointsApplied($orderId, null);
-                    header("Location: /cnpm-final/OrderController/customerTrackOrderPage");
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/OrderController/customerTrackOrderPage");
                     exit;
                 }
                 
                 if ($customerPoints != $customer['points']) {
                     $_SESSION['message'] = ['type' => 'danger', 'text' => 'Điểm của người dùng có sự thay đổi, vui lòng thử lại.'];
                     $paymentModel->setPointsApplied($orderId, null);
-                    header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                     exit;
                 }
                 
@@ -177,7 +177,7 @@
                 if ($promotionId && !$promotionCheck) {
                     $_SESSION['message'] = ['type' => 'danger', 'text' => 'Mã khuyến mãi bạn đã sử dụng có lẽ không còn hiệu lực, vui lòng thử lại.'];
                     $paymentModel->setPromotion($orderId, null);
-                    header("Location: /cnpm-final/PaymentController/customerChoosePaymentPage/" . $orderId);
+                    header("Location: /Custom-PHP-MVC-Cafe-POS/PaymentController/customerChoosePaymentPage/" . $orderId);
                     exit;
                 }
 
